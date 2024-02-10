@@ -1,0 +1,5 @@
+/node_modules
+/api/config
+/api/migration
+/api/models
+/api/seeders

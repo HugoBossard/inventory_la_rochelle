@@ -1,0 +1,11 @@
+{
+  "apps": [
+    {
+      "app_id": "app_7c6e5ece-2adc-4a36-89fb-e65c916233a0",
+      "org_id": "orga_97b92657-1ad6-47e3-9cc3-05372c197737",
+      "deploy_url": "https://push-n2-par-clevercloud-customers.services.clever-cloud.com/app_7c6e5ece-2adc-4a36-89fb-e65c916233a0.git",
+      "name": "sq1-back-inventory-univlr",
+      "alias": "sq1-back-inventory-univlr"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+# stages:
+#   - build
+#   - tests
+#   - deploy_prod
+
+# cache:
+#   paths:
+#     - node_modules/
+
+# build:
+#   image: node:latest
+#   stage: build
+#   script:
+#     - npm install
+#   artifacts:
+#     paths:
+#       - node_modules/
+
+# tests:
+#   stage: tests
+#   image: node:latest
+#   script: 
+#     - npm test
+
+# production:deploy:to:cleaver-cloud:
+#   stage: deploy_prod
+#   image:
+#     name: clevercloud/clever-tools:latest
+#     entrypoint: ["/bin/sh", "-c"]
+#   variables:
+#     CLEVER_KIND_APPLICATION: "node"
+#   only:
+#     - dev
+#   environment:
+#     name: production
+#     url: https://app_7c6e5ece-2adc-4a36-89fb-e65c916233a0.cleverapps.io
+#   script:
+#     - clever link app_7c6e5ece-2adc-4a36-89fb-e65c916233a0
+#     - clever env set NODE_ENV production || true
+#     - clever domain add app_7c6e5ece-2adc-4a36-89fb-e65c916233a0.cleverapps.io || true
+#     - clver deploy -f

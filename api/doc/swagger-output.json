@@ -1,0 +1,108 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "My API",
+    "description": "Documentation automatique de l'api pour le projet <b>Inventory-univlr</b>."
+  },
+  "host": "localhost:4000",
+  "basePath": "",
+  "tags": [
+    {
+      "name": "Materiels"
+    }
+  ],
+  "schemes": [
+    ""
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/api/materiels/emprunter": {
+      "get": {
+        "tags": [
+          "Materiels"
+        ],
+        "description": "Récupérer la liste des matériels emprunter",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Liste des matériels emprunter",
+            "schema": {
+              "$ref": "#/definitions/materielsEmprunter"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/materiels/disponible": {
+      "get": {
+        "tags": [
+          "Materiels"
+        ],
+        "description": "Récupérer la liste des matériels disponible",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Liste des matériels disponible",
+            "schema": {
+              "$ref": "#/definitions/materielsDisponible"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/materiels/emprunt": {
+      "post": {
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "409": {
+            "description": "Conflict"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "materielsEmprunter": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "number",
+          "example": 1
+        },
+        "nomProduit": {
+          "type": "string",
+          "example": "MBP1"
+        }
+      }
+    },
+    "materielsDisponible": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "number",
+          "example": 2
+        },
+        "nomProduit": {
+          "type": "string",
+          "example": "MBP2"
+        }
+      }
+    }
+  }
+}
